@@ -1,0 +1,38 @@
+{
+    "general": {
+        "packageName": "HCShortUrl",
+        "sequence": 0,
+        "namespace": "HoneyComb\\ShortUrl\\"
+    },
+    "formData": {
+        "short.urls": "HoneyComb\\ShortUrl\\Forms\\Admin\\HCShortUrlForm"
+    },
+    "adminMenu": [
+        {
+            "route": "admin.short.urls.index",
+            "parent": "admin.index",
+            "translation": "HCShortUrl::short_urls.page_title",
+            "icon": "link",
+            "aclPermission": "honey_comb_short_url_short_urls_admin_list"
+        }
+    ],
+    "seeder": "HoneyComb\\ShortUrl\\Database\\Seeds\\HCShortUrlSeeder",
+    "routes": [
+        "Routes\/Admin\/routes.short.urls.php",
+        "Routes\/Frontend\/routes.short.urls.php"
+    ],
+    "acl": {
+        "permissions": [
+            {
+                "name": "acl.short.urls",
+                "controller": "HoneyComb\\ShortUrl\\Http\\Controllers\\Admin\\HCShortUrlController",
+                "actions": [
+                    "honey_comb_short_url_short_urls_admin_update",
+                    "honey_comb_short_url_short_urls_admin_create",
+                    "honey_comb_short_url_short_urls_admin_delete",
+                    "honey_comb_short_url_short_urls_admin_list"
+                ]
+            }
+        ]
+    }
+}
